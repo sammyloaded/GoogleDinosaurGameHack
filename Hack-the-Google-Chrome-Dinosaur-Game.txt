@@ -1,0 +1,20 @@
+This hack allows your dinosaur to become invincible, letting players continue the game without fear of being poked or pecked.
+To hack the game, you’ll need to be on the “No Internet” screen, 
+Step1: so go ahead and enter chrome://dino in the address bar. Once there, right-click anywhere on the screen and select “Inspect” from the menu that appears.
+This opens Chrome DevTools, which appears to the right of the browser window. In DevTools, select the “Console” tab.
+Alternatively, you can press Ctrl+Shift+I and jump straight to the “Console” tab in Chrome DevTools.
+
+Step2: Once in the “Console” tab, paste the following command and then press the “Enter” key:
+Code" var original = Runner.prototype.gameOver "
+This may seem like it does nothing, but we’ll explain why this is necessary in a second.
+
+Step3: Next, enter this command:
+Code "Runner.prototype.gameOver = function (){}"
+
+On the next line, f (){} will appear after pressing the “Enter” key.
+
+Here’s what happens now. When the game is over (i.e., when you hit an object), Runner.prototype.gameOver() is called and the action is triggered. In this case, you’ll hear a sound, the game stops, and a Game Over message appears. That’s without our code.
+
+What our code does is replaces the gameOver function with an empty function. That means that instead of hearing the sound, the game stopping, and the message appearing, nothing happens. You just keep running.
+
+Test it out. Close DevTools, and press the space bar to start playing the game.
